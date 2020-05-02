@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.RedBox = new System.Windows.Forms.PictureBox();
             this.GreenBox = new System.Windows.Forms.PictureBox();
             this.BlueBox = new System.Windows.Forms.PictureBox();
@@ -42,6 +43,8 @@
             this.RedLabel = new System.Windows.Forms.Label();
             this.GreenLabel = new System.Windows.Forms.Label();
             this.BlueLabel = new System.Windows.Forms.Label();
+            this.Sweep = new System.Windows.Forms.Button();
+            this.SweepTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RedBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueBox)).BeginInit();
@@ -189,11 +192,27 @@
             this.BlueLabel.TabIndex = 23;
             this.BlueLabel.Text = "Blue";
             // 
+            // Sweep
+            // 
+            this.Sweep.Location = new System.Drawing.Point(427, 502);
+            this.Sweep.Name = "Sweep";
+            this.Sweep.Size = new System.Drawing.Size(200, 40);
+            this.Sweep.TabIndex = 24;
+            this.Sweep.Text = "Sweep";
+            this.Sweep.UseVisualStyleBackColor = true;
+            this.Sweep.Click += new System.EventHandler(this.Sweep_Click);
+            // 
+            // SweepTimer
+            // 
+            this.SweepTimer.Interval = 1;
+            this.SweepTimer.Tick += new System.EventHandler(this.SweepTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 556);
+            this.Controls.Add(this.Sweep);
             this.Controls.Add(this.BlueLabel);
             this.Controls.Add(this.GreenLabel);
             this.Controls.Add(this.RedLabel);
@@ -239,6 +258,8 @@
         private System.Windows.Forms.Label RedLabel;
         private System.Windows.Forms.Label GreenLabel;
         private System.Windows.Forms.Label BlueLabel;
+        private System.Windows.Forms.Button Sweep;
+        private System.Windows.Forms.Timer SweepTimer;
     }
 }
 

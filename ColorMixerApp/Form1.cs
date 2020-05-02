@@ -16,6 +16,7 @@ namespace ColorMixerApp
         int red = 0;
         int green = 0;
         int blue = 0;
+        bool buttonSweep = false;
         public Form1()
         {
             InitializeComponent();
@@ -113,6 +114,43 @@ namespace ColorMixerApp
             ChangeFormColor();
             UpdatateColorBox();
             LabelUpdate();
+        }
+
+        private void Sweep_Click(object sender, EventArgs e)
+        {
+            if (buttonSweep == false)
+            {
+                buttonSweep = true;
+                SweepTimer.Start();
+            }
+            else if (buttonSweep != false)
+            {
+                buttonSweep = false;
+                SweepTimer.Stop();
+            }
+        }
+
+        private void SweepTimer_Tick(object sender, EventArgs e)
+        {
+            SliderUpdate();
+            ChangeFormColor();
+            LabelUpdate();
+            UpdatateColorBox();
+            red += 1;
+            if (red == 255)
+            {
+                red = 0;
+                green += 1;
+            }
+            else if (green == 255)
+            {
+                green = 0;
+                blue += 1;
+            }
+            else if (blue == 255)
+            {
+                blue = 0;
+            }
         }
     }
 }
