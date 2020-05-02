@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.RedBox = new System.Windows.Forms.PictureBox();
             this.GreenBox = new System.Windows.Forms.PictureBox();
             this.BlueBox = new System.Windows.Forms.PictureBox();
@@ -227,8 +228,9 @@
             this.Controls.Add(this.BlueBox);
             this.Controls.Add(this.GreenBox);
             this.Controls.Add(this.RedBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Color Mixer";
             ((System.ComponentModel.ISupportInitialize)(this.RedBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueBox)).EndInit();
